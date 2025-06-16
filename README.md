@@ -8,11 +8,17 @@ This approach empowers teams to manage both infrastructure configuration and app
 ✨ Key Features
 
   Manual or automatic deployment of applications to Kubernetes.
+  
   Auto-syncing live cluster state with Git-defined desired state.
+  
   Web UI and CLI for app visualization and management.
+  
   Detection and correction of configuration drift.
+  
   Role-Based Access Control (RBAC) for secure multi-cluster management.
+  
   SSO integration with GitHub, GitLab, Microsoft, OAuth2, OIDC, LinkedIn, LDAP, and SAML 2.0.
+  
   Webhook support for GitHub, GitLab, and Bitbucket integration.
 
 
