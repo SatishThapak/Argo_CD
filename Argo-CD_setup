@@ -1,4 +1,3 @@
-
 To use Argo CD, we need a Kubernetes cluster, kubectl configured to interact with it, and a Git repository containing your application manifests. 
 You also need to install Argo CD itself, either using Helm, Kustomize, or plain-YAML manifests. 
 
@@ -42,9 +41,3 @@ Argo CD then automatically detects these changes and applies them to your Kubern
 8. Argo CD CLI (Optional):
 The Argo CD CLI (command-line interface) provides a way to interact with Argo CD from your terminal.
 You can download the latest Argo CD CLI version from the official releases page. 
-
-### Method 1: Using Manifest Files
-
-
-
-
