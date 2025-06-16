@@ -41,3 +41,13 @@ Argo CD then automatically detects these changes and applies them to your Kubern
 8. Argo CD CLI (Optional):
 The Argo CD CLI (command-line interface) provides a way to interact with Argo CD from your terminal.
 You can download the latest Argo CD CLI version from the official releases page. 
+
+#### Here,We will be using Method 3 : Plain YAML manifests & Method 3: Kustomize to install : 
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+This will create a new namespace, argocd, where Argo CD services and application resources will live.
+
+
+
