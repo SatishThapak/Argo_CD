@@ -1,1 +1,6 @@
 GitOps CI_CD Pipeline with GitHub Actions & ArgoCD
+
+Build a CI pipeline with GitHub Actions to test, scan, and push Docker images
+Implement GitOps-based CD with ArgoCD for auto-sync and deployment.
+Manage credentials securely with GitHub Secrets
+Enable zero-downtime delivery using ArgoCD’s sync and self-heal features
