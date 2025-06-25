@@ -1,0 +1,44 @@
+
+** GitOps CI/CD Pipeline Using GitHub Actions and ArgoCD
+
+Overview of Objectives:
+
+1. Set up a Continuous Integration (CI) workflow using GitHub Actions to perform testing, security scanning, and Docker image publishing.
+
+2. Establish a GitOps-driven Continuous Deployment (CD) process with ArgoCD to enable automated syncing and application deployment.
+
+3. Securely manage sensitive data by leveraging GitHub Secrets for credential handling.
+
+4. Achieve seamless, zero-downtime deployments through ArgoCD’s auto-sync and self-healing capabilities.
+
+
+** To use Argo CD, we need a Kubernetes cluster, kubectl configured to interact with it, and a Git repository containing your application manifests. **
+
+You also need to install Argo CD itself, either using Helm, Kustomize, or plain-YAML manifests. 
+
+
+
+4. Argo CD Installation:
+
+Method 1: Helm: 
+    Use Helm, a package manager for Kubernetes, to install Argo CD. This is a common and recommended approach. 
+
+Method 2: Kustomize: 
+    Use Kustomize, a configuration management tool, to customize and deploy Argo CD. 
+
+Method 3: Plain YAML manifests: 
+    Apply the official Argo CD manifests directly to your cluster. 
+
+5. Accessing the Argo CD UI:
+
+   To access the Argo CD dashboard, you may need to forward the Argo CD server port using kubectl port-forward.
+   The default port is 443, but it might be exposed as 8080 when using port-forward. 
+
+6. Registering a Cluster :
+   If you want to deploy applications to external clusters, you'll need to register those clusters with Argo CD.
+   This involves providing the cluster's credentials to Argo CD. 
+
+7. Understanding GitOps:
+
+   Argo CD is based on the GitOps paradigm, where changes to your application are made by updating the application's manifests in a Git repository.
+   Argo CD then automatically detects these changes and applies them to your Kubernetes cluster. 

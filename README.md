@@ -7,30 +7,21 @@ This approach empowers teams to manage both infrastructure configuration and app
 
 ✨ Key Features
 
-Manual or automatic deployment of applications to a Kubernetes cluster.
-
-Automatic synchronization of application state to the current version of declarative configuration.
-
-Web user interface and command-line interface (CLI).
-
-Ability to visualize deployment issues, detect and remediate configuration drift.
-
-Role-based access control (RBAC) enabling multi-cluster management.
-
-Single sign-on (SSO) with providers such as GitLab, GitHub, Microsoft, OAuth2, OIDC, LinkedIn, LDAP, and SAML 2.0
-
-Support for webhooks triggering actions in GitLab, GitHub, and BitBucket.
+1. Manual or automatic deployment of applications to a Kubernetes cluster.
+2. Automatic synchronization of application state to the current version of declarative configuration.
+3. Web user interface and command-line interface (CLI).
+4. Ability to visualize deployment issues, detect and remediate configuration drift.
+5. Role-based access control (RBAC) enabling multi-cluster management.
+6. Single sign-on (SSO) with providers such as GitLab, GitHub, Microsoft, OAuth2,  OIDC, LinkedIn, LDAP, and SAML 2.0
+7. Support for webhooks triggering actions in GitLab, GitHub, and BitBucket.
 
 
 
 💡 Why Use Argo CD?
 
-Declarative & Versioned: Your entire deployment process lives in Git—easy to audit, replicate, and roll back.
-
-Automation-First: Reduce human error with automated, consistent deployments.
-
-Transparent & Intuitive: Visualize app state, health, and history via a user-friendly dashboard or CLI.
-
-GitOps Friendly: Ideal for modern DevOps workflows and managing multiple environments or clusters seamlessly.
+1. Declarative & Versioned: Store your entire deployment lifecycle in Git—making it easy to audit, replicate, and roll back changes.
+2. Automation-First: Eliminate manual errors with consistent, automated deployments.
+3. Transparent & Intuitive: View app status, health, and deployment history using a user-friendly dashboard or CLI.
+4. Built for GitOps: Streamlines modern DevOps practices, especially for multi-environment or multi-cluster setups.
 
 
