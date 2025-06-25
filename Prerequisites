@@ -16,7 +16,22 @@ Overview of Objectives:
 
 You also need to install Argo CD itself, either using Helm, Kustomize, or plain-YAML manifests. 
 
+Here's a more detailed:
 
+1. Kubernetes Cluster:
+Argo CD is designed to manage deployments on Kubernetes, so you need a running Kubernetes cluster. This could be a local cluster like Minikube or K3s, or a cloud-based cluster like those offered by GKE, AKS, or EKS.
+
+You'll need to be able to interact with the cluster using kubectl. 
+
+2. kubectl:
+
+kubectl is the command-line tool for interacting with your Kubernetes cluster.
+Make sure kubectl is installed and configured to connect to your cluster. 
+
+3. Git Repository:
+
+Argo CD is a GitOps tool, meaning it uses Git repositories as the source of truth for your application's desired state. 
+You need a Git repository (e.g., GitHub, GitLab, Bitbucket) that contains your Kubernetes manifests (e.g., deployments, services, etc.)
 
 4. Argo CD Installation:
 
