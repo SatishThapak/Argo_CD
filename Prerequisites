@@ -12,7 +12,7 @@ Overview of Objectives:
 4. Achieve seamless, zero-downtime deployments through ArgoCD’s auto-sync and self-healing capabilities.
 
 
-** To use Argo CD, we need a Kubernetes cluster, kubectl configured to interact with it, and a Git repository containing your application manifests. **
+To use Argo CD, we need a Kubernetes cluster, kubectl configured to interact with it, and a Git repository containing your application manifests.
 
 You also need to install Argo CD itself, either using Helm, Kustomize, or plain-YAML manifests. 
 
