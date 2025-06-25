@@ -6,3 +6,16 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 This will create a new namespace, argocd, where Argo CD services and application resources will live
 
 The installation manifests include ClusterRoleBinding resources that reference argocd namespace. If you are installing Argo CD into a different namespace then make sure to update the namespace reference.
+
+
+1. Create docker file 
+2. create docker image 
+
+1. docker login
+
+// Create docker image in the same dir where your dockerfile available.
+
+2. # docker build -t my_argocd_image/node-app:latest .    
+docker tag my_argocd_image/node-app:latest satishthapak/node-app:latest
+docker push satishthapak/node-app:latest
+docker pull satishthapak/node-app
