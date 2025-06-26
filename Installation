@@ -31,7 +31,7 @@ Get pods in the ArgoCD namespace
 # kubectl get pods -n argocd
 
 Expose ArgoCD Server
-# kubectl port-forward - address 0.0.0.0 svc/argocd-server 8080:443 -n argocd
+# kubectl port-forward --address 0.0.0.0 svc/argocd-server 8080:443 -n argocd
 
 Get the ArgoCD password
 # kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo
@@ -61,4 +61,6 @@ Enable Self-Heal
 8. Cluster URL: Select https://kubernetes.default.svc
 9. Namespace: argocd
 9. Leave other settings as default or customize as needed, then click Create
+
+After successfully configuring ArgoCD, we can now proceed to update the final part of our workflow code
 
