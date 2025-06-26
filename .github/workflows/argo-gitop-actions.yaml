@@ -1,0 +1,45 @@
+name: Gitops pipeline with Argocd
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on pushes to the main branch
+jobs:
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install kubectl
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+          chmod +x kubectl
+          sudo mv kubectl /usr/local/bin/
+
+      - name: Set kubeconfig for Minikube
+        run: |
+          mkdir -p $HOME/.kube
+          cp /home/runner/.kube/config $HOME/.kube/config
+
+      - name: Install ArgoCD CLI
+        run: |
+          curl -sSL -o argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+          chmod +x argocd
+          sudo mv argocd /usr/local/bin/
+
+      - name: Login to local ArgoCD
+        run: |
+          argocd login localhost:8080 \
+            --username ${{ secrets.ARGOCD_USERNAME }} \
+            --password ${{ secrets.ARGOCD_PASSWORD }} \
+            --insecure
+
+      - name: Sync local ArgoCD app
+        run: |
+          argocd app sync your-app-name --insecure
+          argocd app wait your-app-name --sync --health
