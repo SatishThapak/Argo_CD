@@ -52,6 +52,7 @@ Configure Repository in ArgoCD UI
 2. Application Name: argocd-github-actions
 3. Project: default
 4. Sync Policy: Automatic
+
 Enable Prune Resources
 Enable Self-Heal
 
