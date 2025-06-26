@@ -1,12 +1,16 @@
 
 ## Install Minikube and create a local Kubernetes cluster. 
+
 ## Docker will be installed for containerization, and kubectl will be used to manage the cluster.
+
 sudo apt  install docker.io -y
 sudo docker run hello-world
 sudo snap install kubectl
+
 Run the following command to download Minikube:
 # curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
 # sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
 minikube start --driver=docker
 kubectl get nodes
 minikube addons enable ingress
