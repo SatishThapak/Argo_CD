@@ -14,31 +14,26 @@ Familiarity with GitHub Actions and Argo CD.
 ## Core Concepts and Terminology
 
 1. Repository: A Git repository that contains the application and infrastructure configurations.
-
 2. Applications: The applications that run on the infrastructure.
-
 3. Infrastructure: The underlying resources that support the applications.
-
 4. GitOps: The automation-first approach to managing infrastructure and applications using Git as the single source of truth.
 
 ## How It Works
 
 1. GitHub Actions: A CI/CD platform that automates workflows such as testing, building Docker images, and pushing updates to your manifests.
-
 2. Argo CD: A declarative GitOps tool for Kubernetes that continuously syncs application state from Git and automates rollbacks on failure.
-
 3. Git: Acts as the version-controlled source of truth for both application and infrastructure configurations.
-
 4. Docker: Used to containerize applications, making them portable and consistent across environments.
-
 5. Kubernetes: Orchestrates and manages the containerized infrastructure and applications.
 
 
 ## Best Practices
 
 1. Separate Repositories: Maintain separate Git repositories for infrastructure and application manifests to isolate concerns and enhance maintainability.
-
 2. Branching Strategies: Use consistent Git branching practices (e.g., feature branches, pull requests) to manage changes in a controlled manner.
-
 3. Rollback Mechanisms: Leverage Argo CD's automated rollback features to quickly revert failed deployments and maintain system stability.
+
+
+
+
 
