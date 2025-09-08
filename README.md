@@ -55,17 +55,21 @@ docker pull satishthapak/node-app
 Create an ArgoCD namespace
 # kubectl create namespace argocd
 
-Run this command to install ArgoCD
-# kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+# Run this command to install ArgoCD
 
-Get pods in the ArgoCD namespace
-# kubectl get pods -n argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-Expose ArgoCD Server
-# kubectl port-forward --address 0.0.0.0 svc/argocd-server 8080:443 -n argocd
+# Get pods in the ArgoCD namespace
 
-Get the ArgoCD password
-# kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo
+kubectl get pods -n argocd
+
+# Expose ArgoCD Server
+
+kubectl port-forward --address 0.0.0.0 svc/argocd-server 8080:443 -n argocd
+
+# Get the ArgoCD password
+
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo
 
 Use passwords to log in to the ArgoCD dashboard
 
