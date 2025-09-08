@@ -1,20 +1,24 @@
-# Use the official Node.js 18 image based on Alpine Linux (lightweight)
-FROM node:18-alpine
+# Use the official Node.js 18 image based on Alpine Linux (lightweight and secure)
+FROM node:18-alpine3.18
 
-# Set the working directory inside the container
+# Create and set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json to install dependencies
+# Copy only package files first to leverage Docker layer caching
 COPY package*.json ./
 
-# Install Node.js dependencies
-RUN npm install
+# Install only production dependencies
+RUN npm install --deve
 
 # Copy the rest of the application code
 COPY . .
 
-# Expose port 3000 so the app can be accessed
+# Add a non-root user for better security
+RUN addgroup app && adduser -S -G app app
+USER app
+
+# Expose the port your app listens on
 EXPOSE 3000
 
-# Command to run the app
+# Start the application
 CMD ["npm", "start"]
