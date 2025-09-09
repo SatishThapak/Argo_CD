@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: satishthapak/node-app:v1.0.0
+        image: satishthapak/argocd:6471763ab61affe42e2e753cef8cbcc50f81843c
         ports:
         - containerPort: 3000
         env:
