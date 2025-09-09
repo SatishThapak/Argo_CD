@@ -6,7 +6,10 @@ app.get('/', (req, res) => {
   res.send('GitHub & ArgoCD GitOps CI/CD Pipeline on Kubernetes');
 });
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.listen(port, () => {
   console.log(`App running on http://localhost:${port}`);
 });
-

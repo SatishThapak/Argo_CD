@@ -1,7 +1,7 @@
 {
-  "name": "gitops-nodejs-app",
+  "name": "node-app",
   "version": "1.0.0",
-  "description": "Node.js app deployed with GitHub Actions and ArgoCD",
+  "description": "Simple Node.js app for GitOps CI/CD demo",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,4 +10,3 @@
     "express": "^4.18.2"
   }
 }
-
