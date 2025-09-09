@@ -80,10 +80,12 @@ To access the ArgoCD UI, you need to forward the ArgoCD server port(if you donâ€
 > kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 **Step 2: Login to the Dashboard**
+
 Open your browser and go to `https://localhost:8080` or http://<public-ip>:<nodeport>
 
-The default username is admin, and to retrieve the password, use:
 
+The default username is admin, and to retrieve the password, use:
 > kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath={.data.password} | base64 -d
+
 
 # 4. Deploying Your First Application with ArgoCD
