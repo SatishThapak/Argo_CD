@@ -54,8 +54,11 @@ Login to Docker:
 **# Build and push your Docker image:**
 
 > docker build -t my_argocd_image/node-app:latest .
+
 > docker tag my_argocd_image/node-app:latest satishthapak/node-app:latest
+
 > docker push satishthapak/node-app:latest
+
 > docker pull satishthapak/node-app
 
 
