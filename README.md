@@ -81,7 +81,7 @@ To access the ArgoCD UI, you need to forward the ArgoCD server port(if you donâ€
 
 **Step 2: Login to the Dashboard**
 
-Open your browser and go to `https://localhost:8080` or http://<public-ip>:<nodeport>
+Open your browser and go to `https://localhost:8080` or http:// public-ip :nodeport
 
 
 The default username is admin, and to retrieve the password, use:
