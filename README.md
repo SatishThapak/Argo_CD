@@ -34,9 +34,9 @@ This approach empowers teams to manage both infrastructure configuration and app
 
 Before we begin, ensure you have the following:
 
-# A running Kubernetes cluster (minikube, EKS, GKE, etc.)
+$# A running Kubernetes cluster (minikube, EKS, GKE, etc.)
 # kubectl configured to interact with your cluster
-# Basic knowledge of Kubernetes resources
+# Basic knowledge of Kubernetes resources$
 
 # Installing ArgoCD on Kubernetes
 Let’s start by installing ArgoCD in your Kubernetes cluster. There are two different ways to do this: using manifest files or a Helm chart.
