@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/SatishThapak/Argo_CD.git
     targetRevision: HEAD
-    path: argocd_manifest
+    path: manifest
 
   destination: 
     server: https://kubernetes.default.svc
