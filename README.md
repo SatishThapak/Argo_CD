@@ -112,4 +112,3 @@ The default username is admin, and to retrieve the password, use:
 > kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath={.data.password} | base64 -d
 
 
-# 4. Deploying Your First Application with ArgoCD
