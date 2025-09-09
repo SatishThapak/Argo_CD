@@ -38,6 +38,26 @@ Before we begin, ensure you have the following:
 2. kubectl configured to interact with your cluster
 3. Basic knowledge of Kubernetes resources$
 
+**Install Minikube:**
+> curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+> sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+**Start Minikube with Docker driver:**
+> minikube start --driver=docker
+> kubectl get nodes
+> minikube addons enable ingress
+
+**Docker Image Setup**
+Login to Docker: 
+> docker login
+
+# Build and push your Docker image:
+> docker build -t my_argocd_image/node-app:latest .
+> docker tag my_argocd_image/node-app:latest satishthapak/node-app:latest
+> docker push satishthapak/node-app:latest
+> docker pull satishthapak/node-app
+
+
 # Installing ArgoCD on Kubernetes
 Let’s start by installing ArgoCD in your Kubernetes cluster. There are two different ways to do this: using manifest files or a Helm chart.
 
