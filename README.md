@@ -48,3 +48,42 @@ You can install ArgoCD using the official manifest files provided by the ArgoCD 
 > kubectl create namespace argocd
 > kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
+This command installs all the necessary ArgoCD components, including the API server, controller, and UI.
+
+**Method 2:** Using a Helm Chart
+Alternatively, you can install ArgoCD using the Helm chart, which allows for more customization through Helm values.
+
+1. Add the ArgoCD Helm repository:
+> helm repo add argo https://argoproj.github.io/argo-helm
+
+2. Install the Helm chart with a custom values file:
+> helm install argocd-demo argo/argo-cd -f argocd-custom-values.yaml
+
+In this example, argocd-custom-values.yaml might look like this:
+> server:
+>   service:
+>     type: NodePort
+
+This overrides the ArgoCD service type from the default ClusterIP to NodePort, allowing you to access the ArgoCD UI via a NodePort.
+
+# Step 2: Verify the Installation
+> kubectl get pods -n argocd
+
+All pods should be in a Running state.
+
+
+# 3. Accessing the ArgoCD Dashboard
+
+**Step 1: Forward the ArgoCD Server Port**
+To access the ArgoCD UI, you need to forward the ArgoCD server port(if you don’t use service type NodePort):
+
+> kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+**Step 2: Login to the Dashboard**
+Open your browser and go to `https://localhost:8080` or http://<public-ip>:<nodeport>
+
+The default username is admin, and to retrieve the password, use:
+
+> kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath={.data.password} | base64 -d
+
+# 4. Deploying Your First Application with ArgoCD
